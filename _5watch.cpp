@@ -124,9 +124,11 @@ void _5watch::sleep() {
   sleep_enable();
   dispFlag = false;
   attachInterrupt(0, scheduleDisp, RISING);
+  attachInterrupt(1, scheduleDisp, RISING);
   sleep_mode();
   //sleep_disable();
   detachInterrupt(0);
+  detachInterrupt(1);
 }
 
 short int _5watch::getSeconds() {
